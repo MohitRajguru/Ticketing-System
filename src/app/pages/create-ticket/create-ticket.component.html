@@ -1,0 +1,83 @@
+<div class="container"
+  style=" background-image: radial-gradient( circle 311px at 8.6% 27.9%,  rgba(62,147,252,0.57) 12.9%, rgba(239,183,192,0.44) 91.2% );">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card my-4 border-0 shadow-sm">
+        <div class="card-body">
+          <h3 class="text-center">Enter ticket details</h3>
+
+          <form #createTicketForm="ngForm" (ngSubmit)="submitForm($event)">
+            <div class="mt-4">
+              <label for="">Enter your name</label>
+              <input type="text" class="form-control" placeholder="Enter here" name="createdBy"
+                [(ngModel)]="ticket.createdBy" required="createdBy" #createdBy="ngModel" pattern="[A-Za-z0-9]+$" />
+              <span *ngIf="createdBy.invalid && createdBy.touched" style="color: red">Please enter valid input</span>
+            </div>
+
+            <div class="mt-4">
+              <label for="">Description</label>
+              <textarea id="" cols="5" rows="4" name="description" class="form-control" placeholder="Enter your issue"
+                name="description" [(ngModel)]="ticket.description" #description="ngModel" required="description"
+                minlength="10" maxlength="100">
+                </textarea>
+              <span *ngIf="description.invalid && description.touched" style="color: red">Description must be of min 10
+                and max 100 characters</span>
+            </div>
+
+            <div class="mt-4">
+              <div class="form-group flex-child-element">
+                <label class="control-label" for="">Type:</label>
+                <div class="form-check">
+                  <label for="" class="radio-inline">
+                    <input class="form-check-input" type="radio" name="type" value="fault" id="type1"
+                      [(ngModel)]="ticket.type" required="type" #type="ngModel" /></label>
+                  <label class="form-check-label" for="type1"> Fault </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="type" value="incident" id="type2"
+                    [(ngModel)]="ticket.type" required="type" #type="ngModel" />
+                  <label class="form-check-label" for="type2"> Incident </label>
+                </div>
+                <span *ngIf="type.invalid && type.touched" style="color: red">Please select the type</span>
+              </div>
+
+              <div class="flex-parent-element">
+                <div class="mt-4">
+                  <div class="flex-child-element">
+                    <label for="">Status:</label>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="status" value="completed" id="status1"
+                        [(ngModel)]="ticket.status" required="status" #status="ngModel" />
+                      <label class="form-check-label" for="status1">
+                        Completed
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="status" value="pending" id="status2"
+                        [(ngModel)]="ticket.status" required="status" #status="ngModel" />
+                      <label class="form-check-label" for="status2">
+                        Pending
+                      </label>
+                    </div>
+                    <span *ngIf="status.invalid && status.touched" style="color: red">Please select the status</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container text-center py-4">
+                <button [disabled]="createTicketForm.invalid" type="submit" class="btn btn-outline-success btn-sm">
+                  Submit
+                </button>
+                <button type="reset" class="btn btn-outline-warning btn-sm ms-3">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ ticket | json }}

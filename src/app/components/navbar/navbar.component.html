@@ -1,0 +1,26 @@
+<nav class="navbar bg-black navbar-dark navbar-expand-lg" *ngIf="!login">
+  <div class="container-fluid">
+    <a class="navbar-brand fs-3 ms-2">Fault Ticket Service</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto text-uppercase">
+        <li *ngIf="!login" class="nav-item">
+          <a class="nav-link active mx-1" aria-current="page" [routerLink]="'view-tickets'" routerLinkActive="active"
+            id="navbarSupportedContent">View Tickets</a>
+        </li>
+
+        <li *ngIf="!login" class="nav-item">
+          <a class="nav-link mx-1" [routerLink]="'create-ticket'" routerLinkActive="active">Create a ticket</a>
+        </li>
+        <li *ngIf="!login" class="nav-item">
+          <a class="nav-link mx-1" onclick="alert('Logging out')" [routerLink]="'/'" routerLinkActive="active">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

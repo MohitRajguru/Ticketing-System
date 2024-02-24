@@ -1,0 +1,45 @@
+<nav class="navbar navbar-dark bg-black text-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1 mx-auto">
+      <h2>Fault Ticket Service</h2>
+    </span>
+  </div>
+</nav>
+
+<div class="banner py-5 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <div class="card my-4 border-0 shadow-sm">
+          <div class="card-body">
+            <h2 class="text-center">Register</h2>
+            <form>
+              <div class="mt-4">
+                <label for="">Username</label>
+                <input type="text" class="form-control" placeholder="Enter your username" name="createdBy" />
+              </div>
+
+              <div class="mt-4">
+                <label for="">Password</label>
+                <input type="password" id="" cols="5" rows="4" class="form-control" placeholder="Enter your password"
+                  name="password" />
+              </div>
+
+              <div class="container text-center py-4">
+                <button type="submit" class="btn btn-outline-success btn-sm">
+                  Login
+                </button>
+                <p class="mt-3 mb-0">
+                  Already have an account? <a [routerLink]="['/login']">Login</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <button class="btn btn-outline-light mt-4" [routerLink]="'/login'">
+        Login
+      </button> -->
+</div>
