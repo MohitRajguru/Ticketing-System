@@ -1,3 +1,15 @@
+# This is front-end code for Ticketing System made using Angular.
+
+It has the following functionalities:
+  1. login
+  2. Signup
+  3. Create a ticket
+  4. Update a ticket
+  5. Fetch a ticket by Id
+  6. Get all Tickets
+  7. Delete a Ticket(By Id)
+
+
 # TicketingFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
